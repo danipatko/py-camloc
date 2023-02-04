@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import cv2
 
-img1 = cv2.imread('sac.png', cv2.IMREAD_GRAYSCALE)
+img1 = cv2.imread('sample.png', cv2.IMREAD_GRAYSCALE)
 
 # Initiate SIFT detector
 sift = cv2.SIFT_create()

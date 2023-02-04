@@ -2,7 +2,7 @@ import numpy as np
 import cv2 as cv
 import matplotlib.pyplot as plt
 
-img1 = cv.imread('sac.png', cv.IMREAD_GRAYSCALE)
+img1 = cv.imread('sample.jpg', cv.IMREAD_GRAYSCALE)
 img2 = cv.imread('dump.png', cv.IMREAD_GRAYSCALE)
 
 # Initiate SIFT detector
