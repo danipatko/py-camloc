@@ -28,7 +28,8 @@ while True:
 
     for m, n in matches:
         # the less diff matches have, the better
-        if abs(1 - m.distance / n.distance) < offset:
+        # if abs(1 - m.distance / n.distance) < offset:
+        if m.distance / 0.75*n.distance:
             count += 1
             x, y = kp2[m.trainIdx].pt
             sumX += x
