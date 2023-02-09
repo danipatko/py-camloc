@@ -48,6 +48,14 @@ for i in range(0, TEST_COUNT):
 ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(
     objpoints, imgpoints, gray.shape[::-1], None, None)
 
+print(ret)
+print(mtx)
+print(dist)
+
+mtx = np.array([[442.317008, 0, 632.839334],
+                [0, 1614.72034, 360.867158],
+                [0, 0, 1]])
+
 # undistort
 cv.namedWindow('image')
 cap = cv.VideoCapture(0)
