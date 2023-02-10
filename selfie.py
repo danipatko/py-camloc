@@ -1,7 +1,7 @@
-import cv2
+import cv2 as cv
 
-cv2.namedWindow('image')
-cap = cv2.VideoCapture(0)
+cv.namedWindow('image')
+cap = cv.VideoCapture(0)
 
 while True:
     ret, frame = cap.read()
@@ -9,11 +9,10 @@ while True:
         print('Can\'t receive frame (stream end?). Exiting ...')
         break
 
-    # frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    cv2.imshow('image', frame)
+    cv.imshow('image', frame)
 
-    if cv2.waitKey(1) == ord('q'):
-        cv2.imwrite("dump.png", frame)
+    if cv.waitKey(1) == ord('q'):
+        cv.imwrite("dump.png", frame)
         break
 
-cv2.destroyAllWindows()
+cv.destroyAllWindows()
