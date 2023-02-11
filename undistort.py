@@ -1,10 +1,8 @@
-#!/usr/bin/env python3
-
-import numpy as np
 import cv2 as cv
 from util import load
+from config import SAVE_TO
 
-cameraMatrix, distCoeffs, _ = load("sjcam")
+cameraMatrix, distCoeffs, _ = load(SAVE_TO)
 
 cv.namedWindow('image')
 cap = cv.VideoCapture(0)

@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # NOTE: calibrate camera before running
 
 import cv2 as cv
