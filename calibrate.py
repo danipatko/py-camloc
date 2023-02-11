@@ -72,7 +72,7 @@ while True:
 
 # evaluate
 _, cameraMatrix, distCoeffs, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, (WIDTH, HEIGHT), None, None)
-newCameraMatrix, _ = cv.getOptimalNewCameraMatrix(cameraMatrix, distCoeffs, RESCALE if RESCALE is not None else (WIDTH, HEIGHT), 1)
+newCameraMatrix, _ = cv.getOptimalNewCameraMatrix(cameraMatrix, distCoeffs, (WIDTH, HEIGHT), 0.2, RESCALE if RESCALE is not None else (WIDTH, HEIGHT))
 
 # save
 save(SAVE_TO, cameraMatrix, distCoeffs[0], newCameraMatrix)
