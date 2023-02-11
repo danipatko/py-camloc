@@ -3,7 +3,7 @@
 #####################
 
 # numpy bin file prefix
-SAVE_TO = "sjcam"
+SAVE_TO = "picam"
 
 # number of samples to take (the more the better)
 TEST_COUNT = 20
@@ -21,8 +21,8 @@ VID_DELAY = 3
 RES_DELAY = 1
 
 # camera resolution
-WIDTH = 1280
-HEIGHT = 720
+WIDTH = 640
+HEIGHT = 480
 
 # create newcameramatrix object for rescaling and transforming
 RESCALE = None  # (1920, 1080)

@@ -7,7 +7,7 @@ from config import *
 # Define the chess board rows and columns
 CHECKERBOARD = (INNER_COL_LENGTH, INNER_ROW_LENGTH)
 subpix_criteria = (cv.TERM_CRITERIA_EPS + cv.TERM_CRITERIA_MAX_ITER, 30, 0.1)
-calibration_flags = cv.fisheye.CALIB_RECOMPUTE_EXTRINSIC + cv.fisheye.CALIB_CHECK_COND + cv.fisheye.CALIB_FIX_SKEW
+calibration_flags = cv.fisheye.CALIB_RECOMPUTE_EXTRINSIC + cv.fisheye.CALIB_FIX_SKEW
 objp = np.zeros((1, CHECKERBOARD[0]*CHECKERBOARD[1], 3), np.float32)
 objp[0, :, :2] = np.mgrid[0:CHECKERBOARD[0], 0:CHECKERBOARD[1]].T.reshape(-1, 2)
 
@@ -90,6 +90,6 @@ rms, _, _, _, _ = cv.fisheye.calibrate(
     (cv.TERM_CRITERIA_EPS+cv.TERM_CRITERIA_MAX_ITER, 30, 1e-6))
 
 map1, map2 = cv.fisheye.initUndistortRectifyMap(K, D, np.eye(3), K, (WIDTH, HEIGHT), cv.CV_16SC2)
-save_remap(map1, map2)
+save_remap(SAVE_TO, map1, map2)
 
 cv.destroyAllWindows()
