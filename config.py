@@ -3,7 +3,7 @@
 #####################
 
 # numpy bin file prefix
-SAVE_TO = "sjcam/sjcam"
+SAVE_TO = "sjcam"
 
 # number of samples to take (the more the better)
 TEST_COUNT = 20

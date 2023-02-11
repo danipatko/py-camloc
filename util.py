@@ -1,15 +1,27 @@
 import numpy as np
 
 
-def save(filename: str, cameraMatrix, distCoeffs, newCameraMatrix):
-    np.save(filename + "_cameramatrix", cameraMatrix)
-    np.save(filename + "_distcoeffs", distCoeffs)
-    np.save(filename + "_newcameramatrix", newCameraMatrix)
+def save(camera: str, cameraMatrix, distCoeffs, newCameraMatrix):
+    np.save(camera + "/cameramatrix", cameraMatrix)
+    np.save(camera + "/distcoeffs", distCoeffs)
+    np.save(camera + "/newcameramatrix", newCameraMatrix)
 
 
-def load(filename: str):
-    cameraMatrix = np.load(filename + "_cameramatrix.npy")
-    distCoeffs = np.load(filename + "_distcoeffs.npy")
-    newCameraMatrix = np.load(filename + "_newcameramatrix.npy")
+def save_remap(camera: str, map1, map2):
+    np.save(camera + "/map1", map1)
+    np.save(camera + "/map2", map2)
+
+
+def load(camera: str):
+    cameraMatrix = np.load(camera + "/cameramatrix.npy")
+    distCoeffs = np.load(camera + "/distcoeffs.npy")
+    newCameraMatrix = np.load(camera + "/newcameramatrix.npy")
 
     return (cameraMatrix, distCoeffs, newCameraMatrix)
+
+
+def load_remap(camera: str):
+    map1 = np.load(camera + "/map1.npy")
+    map2 = np.load(camera + "/map2.npy")
+
+    return (map1, map2)
